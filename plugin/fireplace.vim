@@ -253,7 +253,7 @@ function! s:piggieback.eval(expr, options) abort
 endfunction
 
 function! s:register_connection(conn, ...) abort
-  call insert(s:repls, extend({'connection': a:conn, 'piggiebacks': []}, deepcopy(s:repl)))
+  call insert(s:repls, extend({'id' : "anything here", 'connection': a:conn, 'piggiebacks': []}, deepcopy(s:repl)))
   if a:0 && a:1 !=# ''
     let s:repl_paths[a:1] = s:repls[0]
   endif
